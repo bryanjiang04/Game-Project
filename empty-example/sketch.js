@@ -1,12 +1,18 @@
-function setup() {
-  createCanvas(600, 600);
-}
+class Ball {
 
-function draw(){
-	background(220,100,3);
-  fill("black")
-  ellipse(100,100,40,50);
-  fill("blue")
-  rect(200,200,100,150)
+ constructor(x,y,color){
+	    	this.x = x;
+    		this.y = y;
+           this.color = color;
+	  }
+  }
+    drawBall(){
+    	   stroke(0);
+    	   fill(this.color);
+         ellipse(this.x,this.y,10,10);
+	}
 
-}
+moveBall(){
+	   this.x = this.x+2;
+	   this.y = this.y+.5;
+	}
