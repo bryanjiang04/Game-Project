@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw(){
-	background(220);
+	background(0);
 
   me.drawMe();
   me.moveMe();
@@ -31,7 +31,13 @@ function draw(){
        	  balls[i].moveBall();
         	balls[i].bounceBall();
 	  }
+{
+  fill("white");
+ellipse(100,70,100,100);
 
+fill(0);
+ellipse(120,70,100,100);
+}
 }
 
 //avatar class
@@ -44,16 +50,12 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
-        strokeWeight(3);
-    		fill("blue");
-		    ellipse(this.x,this.y,20,20);
-        line(this.x,this.y, this.x, this.y+40);
-        line(this.x, this.y+40, this.x-20, this.y+60);
-        line(this.x, this.y+40, this.x+10, this.y+50);
-        line(this.x+10, this.y+50, this.x+5, this.y+60);
-        line(this.x, this.y+15, this.x-10, this.y+25);
-        line(this.x-10, this.y+25, this.x+10, this.y+35);
+    		stroke("white");
+        strokeWeight(5);
+    		fill("white");
+		    rect(this.x,this.y,40,5)
+        rect(this.x+17.5,this.y-17.5,5,40)
+
 	}
 
 	moveMe(){
@@ -64,8 +66,13 @@ class Avatar {
     if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
         this.y += this.speed;
     }
+    if (keyIsDown(LEFT_ARROW)) {
+        this.x -= this.speed;
+    }
+      if (keyIsDown(RIGHT_ARROW)) {
+            this.x += this.speed;
 	}
-
+}
   die(){
 
   }
@@ -86,9 +93,9 @@ class Ball {
 	// draw a ball on the screen at x,y
 	drawBall(){
     	stroke(0);
-      strokeWeight(1);
-    	fill("red");
-		  ellipse(this.x,this.y,10,10);
+      strokeWeight(0);
+    	fill(252, 255, 59);
+		  rect(this.x,this.y,30,10);
 	}
 
 	//update the location of the ball, so it moves across the screen
