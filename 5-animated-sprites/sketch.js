@@ -2,7 +2,7 @@
 //
 // animations like p5 images should be stored in variables
 // in order to be displayed during the draw cycle
-var ghost;
+var sprites;
 //
 // //it's advisable (but not necessary) to load the images in the preload function
 // //of your sketch otherwise they may appear with a little delay
@@ -10,7 +10,7 @@ function preload() {
 //
 //   //create an animation from a sequence of numbered images
 //   //pass the first and the last file name and it will try to find the ones in between
-  ghost = loadAnimation('assets/ghost_standing0001.png', 'assets/ghost_standing0007.png');
+  sprites = loadAnimation('sprites/rockstar001.png', 'sprites/rockstar002.png', 'sprites/rockstar003.png', 'sprites/rockstar005.png', 'sprites/rockstar006.png', 'sprites/rockstar007.png');
 
 }
 
@@ -23,6 +23,6 @@ function draw() {
 
   //specify the animation instance and its x,y position
   //animation() will update the animation frame as well
-  animation(ghost, 300, 150);
+  animation(sprites, 300, 300);
 
 }
